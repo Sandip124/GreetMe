@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/Sandip124/GreetHub#readme",
   "dependencies": {
+    "canvas": "^2.9.0",
     "color-scheme": "^1.0.1",
     "express": "^4.17.3",
-    "randomcolor": "^0.6.2",
+    "random-color-pair": "^1.0.5",
     "unique-random-array": "^2.0.0"
   }
 }

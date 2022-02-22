@@ -8,28 +8,44 @@ const dayGreetings = require("./data/day.js");
 const eveningGreetings = require("./data/evening.js");
 const nightGreetings = require("./data/night.js");
 
+const { createCanvas } = require('canvas')
+const getColorPair = require("random-color-pair");
+
+
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
 app.get('/greet', async (req, res) => {
-
-    res.setHeader("Content-Type", "image/svg+xml");
     
     const currentDate = new Date();
     const hours = currentDate.getHours();
     const message = hours < 12 ? uniqueRandomArray(morningGreetings.greetings) : hours < 18 ? uniqueRandomArray(dayGreetings.greetings) : hours < 21 ? uniqueRandomArray(eveningGreetings.greetings) : uniqueRandomArray(nightGreetings.greetings);
-        
-    return res.send(
-        `
-    <svg width="495" height="120" viewBox="0 0 495 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <style>
-    .header { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #ffffff }
-    </style>
-    <rect x="0.5" y="0.5" width="494" height="79%" rx="4.5" fill="#180040" stroke="#E4E2E2"/>
-    <text x="25" y="45" class="header">${message()}</text>
-    </svg>
-  `);
+
+    const width = 1200
+    const height = 250
+
+    const canvas = createCanvas(width, height)
+    const context = canvas.getContext('2d')
+    const [foreground, background] = getColorPair();
+
+
+    context.fillStyle = background;
+    context.fillRect(0, 0, width, height)
+    context.font = '600 42px  Ubuntu, Sans-Serif;'
+    context.textAlign = 'center'
+    context.textBaseline = 'top'
+
+    context.fillStyle = foreground
+    context.fillText(message(), 600, 70)
+    context.font = '600 16px Ubuntu, Sans-Serif;'
+    context.fillText(`(${message()})`, 600, 150)
+    
+    const buffer = canvas.toBuffer('image/png')
+    res.contentType('image/jpeg');
+    res.send(buffer);
+
 })
 
 app.listen(port, () => {

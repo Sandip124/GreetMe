@@ -11,7 +11,6 @@ const greetings = [
     "I feel so sleepy 💤💤",
     "Have a GOOD NIGHT",
     "OH MY GOD LOOK AT THE TIME, GOOD NIGHT",
-    "Good Night , Sleep Tight, Dont't let the BED BUGS 🐛 Bite",
     "Good Night, Nothing to say more.",
     "I'll toast to that , Good Night Beautiful",
 ]

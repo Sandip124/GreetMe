@@ -23,7 +23,6 @@ const greetings = [
     "Have a coffee this morning ☕☕",
     "🐒 If Monday had a face This would be it, GOOD MORNING",
     "I Woke up Early",
-    "Reming Yourself This morning that, YOUR ARE ENOUGH, Good Enough, Smart Enough, Beautiful Enough, Kind Enough, Go Conquer the Day",
 ]
 
 module.exports = { greetings };
