@@ -1,0 +1,27 @@
+{
+  "name": "greethub",
+  "version": "1.0.0",
+  "description": "Greeting panda",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sandip124/GreetHub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sandip124/GreetHub/issues"
+  },
+  "homepage": "https://github.com/Sandip124/GreetHub#readme",
+  "dependencies": {
+    "color-scheme": "^1.0.1",
+    "express": "^4.17.3",
+    "randomcolor": "^0.6.2",
+    "unique-random-array": "^3.0.0"
+  }
+}
