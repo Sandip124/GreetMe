@@ -17,8 +17,10 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.get('/greet', async (req, res) => {
-    
+app.get('/greet', (req, res) => {
+
+    res.setHeader("Cache-Control", `public, max-age=${10}`);
+
     const currentDate = new Date();
     const hours = currentDate.getHours();
     const message = hours < 12 ? uniqueRandomArray(morningGreetings.greetings) : hours < 18 ? uniqueRandomArray(dayGreetings.greetings) : hours < 21 ? uniqueRandomArray(eveningGreetings.greetings) : uniqueRandomArray(nightGreetings.greetings);
