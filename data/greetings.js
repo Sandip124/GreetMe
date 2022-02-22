@@ -26,4 +26,4 @@ const greetings = [
     "Reming Yourself This morning that, YOUR ARE ENOUGH, Good Enough, Smart Enough, Beautiful Enough, Kind Enough, Go Conquer the Day",
 ]
 
-export default { greetings };
+module.exports = { greetings };

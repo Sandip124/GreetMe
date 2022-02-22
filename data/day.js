@@ -16,4 +16,4 @@ const greetings = [
     "It's HIGH NOON 🦝🦝"
 ];
 
-export default { greetings };
+module.exports = { greetings };

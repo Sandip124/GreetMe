@@ -16,4 +16,4 @@ const greetings = [
     "I'll toast to that , Good Night Beautiful",
 ]
 
-export default { greetings }
+module.exports = { greetings };

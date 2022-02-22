@@ -1,13 +1,12 @@
-import express from 'express';
-
+const express = require("express")
 const app = express()
 const port = 3000
 
-import uniqueRandomArray from 'unique-random-array';
-import morningGreetings from './data/greetings.js';
-import dayGreetings from './data/day.js';
-import eveningGreetings from './data/evening.js';
-import nightGreetings from './data/night.js';
+const uniqueRandomArray  = require("unique-random-array");
+const morningGreetings = require("./data/greetings.js");
+const dayGreetings = require("./data/day.js");
+const eveningGreetings = require("./data/evening.js");
+const nightGreetings = require("./data/night.js");
 
 app.get('/', (req, res) => {
     res.send('Hello World!')

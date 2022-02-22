@@ -12,4 +12,4 @@ const greetings = [
     "Happy to see you here again"
 ]
 
-export default { greetings };
+module.exports = { greetings };
