@@ -14,17 +14,34 @@ const getColorPair = require("random-color-pair");
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
 
-app.get('/greet', (req, res) => {
-
+    const {
+        greet,
+        heading,
+        text
+    } = req.query;
+    
     res.setHeader("Cache-Control", `public, max-age=${10}`);
 
     const currentDate = new Date();
     const hours = currentDate.getHours();
-    const message = hours < 12 ? uniqueRandomArray(morningGreetings.greetings) : hours < 18 ? uniqueRandomArray(dayGreetings.greetings) : hours < 21 ? uniqueRandomArray(eveningGreetings.greetings) : uniqueRandomArray(nightGreetings.greetings);
 
+    let message = "Welcome to my github page.";
+    let textMessage = "weeeeeeeeeee weeeeeeeeeee";
+    
+    if(typeof heading != 'undefined' && heading !== ''){
+        message = heading;
+    }
+
+    if(typeof text != 'undefined' &&  text !== ''){
+        textMessage = text;
+    }
+    
+    if(typeof greet != 'undefined' && greet === "true") {
+        let randomMessage = hours < 12 ? uniqueRandomArray(morningGreetings.greetings) : hours < 18 ? uniqueRandomArray(dayGreetings.greetings) : hours < 21 ? uniqueRandomArray(eveningGreetings.greetings) : uniqueRandomArray(nightGreetings.greetings);
+        message = randomMessage();
+        textMessage = randomMessage();
+    }
     const width = 1200
     const height = 250
 
@@ -40,9 +57,9 @@ app.get('/greet', (req, res) => {
     context.textBaseline = 'top'
 
     context.fillStyle = foreground
-    context.fillText(message(), 600, 70)
+    context.fillText(message, 600, 70)
     context.font = '600 16px Ubuntu, Sans-Serif;'
-    context.fillText(`(${message()})`, 600, 150)
+    context.fillText(`(${textMessage})`, 600, 150)
     
     const buffer = canvas.toBuffer('image/png')
     res.contentType('image/jpeg');
