@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
         text
     } = req.query;
     
-    res.setHeader("Cache-Control", `public, max-age=${10}`);
+    res.setHeader("Cache-Control", `public, max-age=${5}`);
 
     const currentDate = new Date();
     const hours = currentDate.getHours();
