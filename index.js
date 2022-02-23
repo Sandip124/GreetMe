@@ -9,11 +9,13 @@ const eveningGreetings = require("./data/evening.js");
 const nightGreetings = require("./data/night.js");
 
 const { createCanvas } = require('canvas')
+const { fillTextWithTwemoji } = require('node-canvas-with-twemoji-and-discord-emoji');
+
 const getColorPair = require("random-color-pair");
 
 
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
 
     const {
         greet,
@@ -57,9 +59,12 @@ app.get('/', (req, res) => {
     context.textBaseline = 'top'
 
     context.fillStyle = foreground
-    context.fillText(message, 600, 70)
+    //context.fillText(message, 600, 70)
+    await fillTextWithTwemoji(context, message, 600, 70);
+
     context.font = '600 16px Ubuntu, Sans-Serif;'
-    context.fillText(`(${textMessage})`, 600, 150)
+    await fillTextWithTwemoji(context, `${textMessage}`, 600, 150);
+    //context.fillText(`(${textMessage})`, 600, 150)
     
     const buffer = canvas.toBuffer('image/png')
     res.contentType('image/jpeg');

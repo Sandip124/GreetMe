@@ -21,6 +21,7 @@
     "canvas": "^2.9.0",
     "color-scheme": "^1.0.1",
     "express": "^4.17.3",
+    "node-canvas-with-twemoji-and-discord-emoji": "^1.2.1",
     "random-color-pair": "^1.0.5",
     "unique-random-array": "^2.0.0"
   }
