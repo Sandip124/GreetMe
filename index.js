@@ -47,8 +47,8 @@ app.get('/', async (req, res) => {
     const width = 1200
     const height = 250
 
-    registerFont("font/poppins-Regular.ttf",{family:"Poppins",weight:"400",style:"Regular"})
-    registerFont("font/poppins-Bold.ttf",{family:"Poppins",weight:"700",style:"Bold"})
+    registerFont("poppins-Regular.ttf",{family:"Poppins",weight:"400",style:"Regular"})
+    registerFont("poppins-Bold.ttf",{family:"Poppins",weight:"700",style:"Bold"})
     const canvas = createCanvas(width, height)
     const context = canvas.getContext('2d')
     const [foreground, background] = getColorPair();
