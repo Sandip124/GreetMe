@@ -1,4 +1,7 @@
+![Greethub Logo](greethub.png)  
+
 # GreetHub
+
 Dynamic greeting for your readme profile
 
 ## Usages
