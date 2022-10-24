@@ -1,4 +1,4 @@
-# GreetHub
+# GreetMe
 
 Dynamic greeting for your readme profile
 
