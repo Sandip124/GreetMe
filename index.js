@@ -73,8 +73,8 @@ app.get('/',
         const context = canvas.getContext('2d')
 
         const colors = uniqueRandomArray(colorPairs.colorPairs);
-        let background = `${colors()[0]}`;
-        let foreground = `${colors()[1]}`;
+        let background = `${colors().background}`;
+        let foreground = `${colors().foreground}`;
 
         if (typeof darkmode != 'undefined' && darkmode === "true") {
             if (darkmode) {
@@ -130,7 +130,6 @@ function getDateFromOffset(offset) {
     // get UTC time in msec
     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
 
-    console.log(d.getTimezoneOffset());
     // create new Date object for different city
     // using supplied offset
     var newDate = new Date(utc + (3600000 * offset));
