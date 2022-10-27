@@ -72,17 +72,14 @@ app.get('/',
         const canvas = createCanvas(width, height)
         const context = canvas.getContext('2d')
 
-        let background;
-        let foreground;
+        const colors = uniqueRandomArray(colorPairs.colorPairs);
+        let background = `${colors()[0]}`;
+        let foreground = `${colors()[1]}`;
 
-        if (typeof darkmode != 'undefined' && darkMode === "true") {
+        if (typeof darkmode != 'undefined' && darkmode === "true") {
             if (darkmode) {
                 background = `#3b4252`;
                 foreground = `#FFFFFF`;
-            } else {
-                const colors = uniqueRandomArray(colorPairs.colorPairs);
-                background = `${colors()[0]}`;
-                foreground = `${colors()[1]}`;
             }
         }
         context.fillStyle = background;
