@@ -19,7 +19,7 @@ app.get('/',
             greet,
             heading,
             text,
-            darkMode = false,
+            darkmode = false,
             w=1200,
             h=250
         } = req.query;
@@ -75,8 +75,8 @@ app.get('/',
         let background;
         let foreground;
 
-        if (typeof darkMode != 'undefined' && darkMode === "true") {
-            if (darkMode) {
+        if (typeof darkmode != 'undefined' && darkMode === "true") {
+            if (darkmode) {
                 background = `#888888`;
                 foreground = `#FFFFFF`;
             } else {
