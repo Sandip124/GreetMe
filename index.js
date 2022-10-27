@@ -77,7 +77,7 @@ app.get('/',
 
         if (typeof darkmode != 'undefined' && darkMode === "true") {
             if (darkmode) {
-                background = `#888888`;
+                background = `#3b4252`;
                 foreground = `#FFFFFF`;
             } else {
                 const colors = uniqueRandomArray(colorPairs.colorPairs);
